@@ -1,5 +1,5 @@
 ---
-- hosts: dashboard
+- hosts: app_servers
   gather_facts: False
   remote_user: ec2-user
 
