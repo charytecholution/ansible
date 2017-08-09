@@ -1,0 +1,5 @@
+[all_servers:vars]
+ansible_ssh_private_key_file=./bosh.pem
+
+[dashboard]
+1.2.3.4 dashboard_domain=my.domain.info
