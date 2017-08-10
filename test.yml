@@ -2,8 +2,7 @@
   - name: Spin up app container
     hosts: app_servers
     gather_facts: False
-    remote_user: ubuntu
-    sudo: True
+    remote_user: root
     vars:
       base_image: nexus.techolution.com:8123/d3/ui
       container_name: poc_ui
