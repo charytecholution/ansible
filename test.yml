@@ -8,7 +8,9 @@
       base_image: jenkins
       container_name: chary_jenkins
     tasks:
+      - name: Remove the base container if it exists
+        shell: docker rm -f {{ container_name }}
       - name: Start the base container
-        shell: docker run -d -t -p 4200:8080 --name {{ container_name }} {{ base_image }} bash
+        shell: docker run -d -t -p 8080:8080 --name {{ container_name }} {{ base_image }} bash
       - name: Add the container to the inventory
         add_host: name={{ container_name }}
