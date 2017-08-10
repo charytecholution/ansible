@@ -8,7 +8,8 @@
       container_name: poc_ui
     tasks:
       - name: Remove the base container if it exists
-        shell: docker rm -f {{ container_name }}
+        #shell: docker rm -f {{ container_name }}
+        shell: docker ps -a
       - name: Start the base container
         shell: docker run -d -t -p 4200:4200 --name {{ container_name }} {{ base_image }} bash
       - name: Add the container to the inventory
