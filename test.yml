@@ -3,7 +3,7 @@
     hosts: app_servers
     gather_facts: False
     remote_user: ec2-user
-    sudo: False
+    sudo: True
     vars:
       base_image: nexus.techolution.com:8123/d3/ui
       container_name: poc_ui
