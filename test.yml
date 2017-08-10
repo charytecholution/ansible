@@ -8,6 +8,10 @@
         file:
           path: /home/ubuntu/src/docker-compose/
           state: directory
+      - name: Ensure docker-compose file is up to date
+        template:
+          src: compose/docker-compose.yml
+          dest: "/home/ubuntu/src/docker-compose/docker-compose.yml"
       - name: Stop the containers
         command: /usr/local/bin/docker-compose -f /home/ubuntu/src/docker-compose/docker-compose.yml down
       - name: Start the containers
