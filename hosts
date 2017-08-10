@@ -5,4 +5,5 @@ ansible_ssh_private_key_file=./bosh.pem
 app_servers
 
 [app_servers]
-13.126.175.91
+#13.126.175.91
+ec2-54-84-210-143.compute-1.amazonaws.com
