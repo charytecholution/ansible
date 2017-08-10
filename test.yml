@@ -6,3 +6,5 @@
   tasks:
     - name: ping
       ping:
+    - name: echo
+      shell: echo HELLO WORLD! > hello_world
