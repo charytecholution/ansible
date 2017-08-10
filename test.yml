@@ -4,7 +4,11 @@
     gather_facts: False
     remote_user: ubuntu
     tasks: 
+      - name: Ensure docker-compose directory exists
+        file:
+          path: /home/ubuntu/src/docker-compose/
+          state: directory
       - name: Stop the containers
-        shell: docker-compose down -f /home/ubuntu/src/docker-compose/docker-compose.yml
+        command: /usr/local/bin/docker-compose -f /home/ubuntu/src/docker-compose/docker-compose.yml down
       - name: Start the containers
-        shell: docker-compose up -d -f /home/ubuntu/src/docker-compose/docker-compose.yml
+        command: /usr/local/bin/docker-compose -f /home/ubuntu/src/docker-compose/docker-compose.yml up -d
