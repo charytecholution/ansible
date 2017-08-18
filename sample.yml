@@ -1,0 +1,11 @@
+---
+  - name: Training_Containers
+    hosts: app_servers
+    gather_facts: False
+    remote_user: ubuntu
+    tasks: 
+      - name: Executing a Command Using Shell Module 
+        shell: /usr/local/bin/docker-compose -f /home/ubuntu/src/docker-compose/training/docker-compose.yml down
+        args:
+          chdir: /home/ubuntu/src/docker-compose/training
+          executable: /bin/bash
