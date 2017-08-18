@@ -6,7 +6,7 @@
     tasks: 
       - name: Ensure docker-compose directory exists
         file:
-          path: /home/ubuntu/src/docker-compose/training/
+          path: /home/ubuntu/src/docker-compose/training
           state: directory
       - name: Ensure docker-compose file is up to date
         template:
