@@ -6,13 +6,13 @@
     tasks: 
       - name: Ensure docker-compose directory exists
         file:
-          path: /home/ubuntu/src/docker-compose/training/
+          path: /home/ubuntu/training/
           state: directory
       - name: Ensure docker-compose file is up to date
         template:
           src: training/docker-compose.yml
-          dest: "/home/ubuntu/src/docker-compose/training/docker-compose.yml"
+          dest: "/home/ubuntu/training/docker-compose.yml"
       - name: Stop the containers
-        command: /usr/local/bin/docker-compose -f /home/ubuntu/src/docker-compose/training/docker-compose.yml down
+        command: /usr/local/bin/docker-compose -f /home/ubuntu/training/docker-compose.yml down
       - name: Start the containers
-        command: /usr/local/bin/docker-compose -f /home/ubuntu/src/docker-compose/training/docker-compose.yml up -d
+        command: /usr/local/bin/docker-compose -f /home/ubuntu/training/docker-compose.yml up -d
